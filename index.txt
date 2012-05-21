@@ -2,6 +2,7 @@ Desktop User Experience:
 <script src="http://dserban.github.com/js/jquery.js"></script>
 <script src="http://dserban.github.com/js/bootstrap-modal.js"></script>
 <link rel="stylesheet" href="http://dserban.github.com/css/bootstrap.css">
+<link rel="stylesheet" href="http://dserban.github.com/css/chosen/chosen.css">
 
 Mobile User Experience:
 <script src="http://dserban.github.com/js/jquery.js"></script>
