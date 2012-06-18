@@ -47,7 +47,7 @@ $(function(){
       e.preventDefault()
       console.log("in show");
       window.track.render();
-      $(".visualstate").hide( "fast", function() { 
+      $(".visualstate").hide().promise().done( function() { 
         $('#trackprogress').show();
       });
       
