@@ -6,6 +6,8 @@ Desktop User Experience:
 <script src="http://dserban.github.com/js/chosen/chosen.jquery.js"></script>
 <script src="http://dserban.github.com/js/backbone.localStorage-min.js"></script>
 <link rel="stylesheet" href="http://dserban.github.com/css/bootstrap.css">
+<link rel="stylesheet" href="http://dserban.github.com/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="http://dserban.github.com/css/docs.css">
 <link rel="stylesheet" href="http://dserban.github.com/css/chosen/chosen.css">
 
 Mobile User Experience:
