@@ -1,5 +1,6 @@
 Desktop User Experience:
 <script src="http://dserban.github.com/js/jquery.js"></script>
+<script src="http://dserban.github.com/js/zepto.min.js"></script>
 <script src="http://dserban.github.com/js/bootstrap-modal.js"></script>
 <script src="http://dserban.github.com/js/chosen/chosen.jquery.js"></script>
 <script src="http://dserban.github.com/js/backbone.localStorage-min.js"></script>
