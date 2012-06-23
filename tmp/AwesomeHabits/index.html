@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AwesomeHabits</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://dserban.github.com/css/bootstrap.css">
+    <style>
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a id="gohome" href="#"><span class="brand" style="color: white;">AwesomeHabits</span></a>
+          <div>
+            <ul class="nav pull-right">
+              <li><a href="#" id="progress-link">Track my progress</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+          <div class="hero-unit">
+            <div id="welcomescreen" class="visualstate">
+              <h2>Develop good habits.</h2>
+              <h2>Break bad ones.</h2>
+              <h3>Set your goals.</h3>
+              <h3>Track your progress.</h3>
+              <br>
+              <a href="#"><button id="0" class="btn btn-primary pretend nowrap">Pretend it's Monday</button></a>
+              <br>
+              <br>
+              <a href="#"><button id="1" class="btn btn-primary pretend">Pretend it's Tuesday</button></a>
+              <br>
+              <br>
+              <a href="#"><button id="2" class="btn btn-primary pretend">Pretend it's Wednesday</button></a>
+              <br>
+              <br>
+              <a href="#"><button id="3" class="btn btn-primary pretend">Pretend it's Thursday</button></a>
+              <br>
+              <br>
+              <a href="#"><button id="4" class="btn btn-primary pretend">Pretend it's Friday</button></a>
+              <br>
+              <br>
+              <a href="#"><button id="5" class="btn btn-primary pretend">Pretend it's Saturday</button></a>
+              <br>
+              <br>
+              <a href="#"><button id="6" class="btn btn-primary pretend">Pretend it's Sunday</button></a>
+              <br>
+              <br>
+            </div> <!-- id="welcomescreen" -->
+            <div id="eachday" class="visualstate" style="display: none;"> </div>
+            <!-- id="eachday" -->
+            <div id="trackprogress" class="visualstate">
+              <table class="table table-striped">
+                <tbody></tbody>
+              </table>
+            </div> <!-- track progress -->
+          </div>
+    <script type="text/template" id="progress-template">
+        <td><%= name %></td><td><%= progress %>%</td>
+    </script>
+  </body>
+</html>
+<script src="http://dserban.github.com/js/zepto.min.js"></script>
+<script src="http://dserban.github.com/js/handlebars.js"></script>
+<script src="http://documentcloud.github.com/underscore/underscore.js"></script>
+<script src="http://documentcloud.github.com/backbone/backbone.js"></script>
+<script src="js/app.js"></script>
+<script src="js/app_progress.js"></script>
+
