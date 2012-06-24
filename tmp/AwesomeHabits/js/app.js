@@ -4,19 +4,50 @@ habits.push("Drink at least 10 glasses of water every day");
 habits.push("Eat a healthy diet");
 habits.push("Spend at least 15 minutes a day learning a new skill");
 habits.push("Be punctual");
-habits.push("Brisk-walk at least 30 minutes a day");
+habits.push("Brisk-walk or jog at least 30 minutes a day");
 habits.push("Brush teeth twice a day");
-habits.push("Refrain from watching TV");
+habits.push("No TV");
+
 var dailyHabits=new Array();
-for (var di = 0; di < 7; di++) {
+for (var di = 0; di < 7; di++)
+  {
   dailyHabits[di]=new Array();
-  for (var hi = 0; hi < habits.length; hi++) {
+  for (var hi = 0; hi < habits.length; hi++)
+  {
     dailyHabits[di][hi]=0;
   }
 }
 
-$(".pretend").on("click", function(e) { e.preventDefault(); currentDay=parseInt($(this).attr("id")); $("#welcomescreen").hide(); rewriteEachDayDivFromScratch(); $("#eachday").show(); } );
-$("#gohome").on("click", function(e) { e.preventDefault(); $(".visualstate").hide(); $("#welcomescreen").show(); } );
+$(".pretend").on("click", function(e) {
+  e.preventDefault();
+  currentDay=parseInt($(this).attr("id"));
+  $("#welcomescreen").hide();
+  rewriteEachDayDivFromScratch();
+  $("#eachday").show();
+});
+
+$(".gohome").on("click", function(e) {
+  e.preventDefault();
+  $(".visualstate").hide();
+  $("#welcomescreen").show();
+});
+
+$("#newhabitbutton").on("click", function(e) {
+  e.preventDefault();
+  $(".visualstate").hide();
+  $("#newhabit").show();
+});
+
+$("#savehabitbutton").on("click", function(e) {
+  e.preventDefault();
+  habits.push($("#habit").val());
+  for (var di = 0; di < 7; di++)
+  {
+    dailyHabits[di][habits.length-1]=0;
+  }
+  $(".visualstate").hide();
+  $("#welcomescreen").show();
+});
 
 function rewriteEachDayDivFromScratch()
 {
@@ -27,7 +58,7 @@ function rewriteEachDayDivFromScratch()
   txt+='<p style="font-size: 36px;">Today</p>';
   txt+='</div>';
   txt+='<div style="display: inline; float:right; padding: 10px;">';
-  txt+='<img id="gohome" src="http://dserban.github.com/css/images/home.png">';
+  txt+='<img class="gohome" src="http://dserban.github.com/css/images/home.png">';
   txt+='</div>';
   txt+='</div>';
   $("#eachday").append(txt);
@@ -54,8 +85,24 @@ function rewriteEachDayDivFromScratch()
       $("#"+checked_id).show();
     }
   }
-  $("#gohome").on("click", function(e) { e.preventDefault(); $(".visualstate").hide(); $("#welcomescreen").show(); } );
-  $(".notchecked").click( function(e) { e.preventDefault(); var currentHabit=parseInt($(this).attr("id").replace(/^notchecked_/, "")); dailyHabits[currentDay][currentHabit]=1; $("#notchecked_"+currentHabit).hide(); $("#checked_"+currentHabit).show(); } );
-  $(".checked").click( function(e) { e.preventDefault(); var currentHabit=parseInt($(this).attr("id").replace(/^checked_/, "")); dailyHabits[currentDay][currentHabit]=0; $("#checked_"+currentHabit).hide(); $("#notchecked_"+currentHabit).show(); } );
+  $(".gohome").on("click", function(e) {
+    e.preventDefault();
+    $(".visualstate").hide();
+    $("#welcomescreen").show();
+  });
+  $(".notchecked").click( function(e) {
+    e.preventDefault();
+    var currentHabit=parseInt($(this).attr("id").replace(/^notchecked_/, ""));
+    dailyHabits[currentDay][currentHabit]=1;
+    $("#notchecked_"+currentHabit).hide();
+    $("#checked_"+currentHabit).show();
+  });
+  $(".checked").click( function(e) {
+    e.preventDefault();
+    var currentHabit=parseInt($(this).attr("id").replace(/^checked_/, ""));
+    dailyHabits[currentDay][currentHabit]=0;
+    $("#checked_"+currentHabit).hide();
+    $("#notchecked_"+currentHabit).show();
+  });
 }
 

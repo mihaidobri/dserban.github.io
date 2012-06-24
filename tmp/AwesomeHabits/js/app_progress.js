@@ -45,7 +45,6 @@ $(function(){
 
     show: function(e){
       e.preventDefault()
-      console.log("in show");
       window.track.render();
       $(".visualstate").hide();
       $('#trackprogress').show();
@@ -73,3 +72,4 @@ $(function(){
   trackview.render();
   window.track = trackview;
 });
+

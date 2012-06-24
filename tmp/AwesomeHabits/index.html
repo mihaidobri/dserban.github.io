@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="http://dserban.github.com/css/bootstrap.css">
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css">
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/docs.css">
+    <link rel="stylesheet" href="http://dserban.github.com/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="http://dserban.github.com/css/docs.css">
     <style>
       body {
         padding: 10px;
@@ -14,6 +14,7 @@
     </style>
   </head>
   <body>
+
     <div id="welcomescreen" class="visualstate jumbotron masthead">
       <div style="display: inline; float: left; padding: 15px;">
         <span style="font-size: 18px;">Develop good habits.<br>Break unhealthy ones.</span>
@@ -39,31 +40,54 @@
       <br>
       <br>
       <button id="progress-link" class="btn btn-inverse" style="width: 100%;">Track my progress</button>
+      <br>
+      <button id="newhabitbutton" class="btn btn-inverse" style="width: 100%;">Set new goal</button>
     </div> <!-- id="welcomescreen" -->
+
     <div id="eachday" class="visualstate" style="display: none;">
     </div> <!-- id="eachday" -->
-    <div id="trackprogress" class="visualstate">
+
+    <div id="newhabit" class="visualstate jumbotron masthead" style="display: none;">
+      <div>
+        <div style="display: inline; float: left; padding: 20px;">
+          <p style="font-size: 36px;">New goal</p>
+        </div>
+        <div style="display: inline; float:right; padding: 10px;">
+          <img class="gohome" src="http://dserban.github.com/css/images/home.png">
+        </div>
+      </div>
+      <div style="clear: both;">
+        <form class="well">
+          <input type="text" id="habit" class="input-xlarge">
+          <button id="savehabitbutton" class="btn btn-inverse" style="width: 100%;">Set</button>
+        </form>
+      </div>
+    </div> <!-- id="newhabit" -->
+
+    <div id="trackprogress" class="visualstate" style="display: none;">
       <div>
         <div style="display: inline; float: left; padding: 20px;">
           <p style="font-size: 36px;">Progress</p>
         </div>
         <div style="display: inline; float:right; padding: 10px;">
-          <img id="gohome" src="http://dserban.github.com/css/images/home.png">
+          <img class="gohome" src="http://dserban.github.com/css/images/home.png">
         </div>
       </div>
       <table class="table table-striped">
         <tbody></tbody>
       </table>
-    </div> <!-- track progress -->
+    </div> <!-- id="trackprogress" -->
+
     <script type="text/template" id="progress-template">
       <td><%= name %></td><td><%= progress %>%</td>
     </script>
+
   </body>
 </html>
 <script src="http://dserban.github.com/js/zepto.min.js"></script>
 <script src="http://dserban.github.com/js/handlebars.js"></script>
-<script src="http://documentcloud.github.com/underscore/underscore.js"></script>
-<script src="http://documentcloud.github.com/backbone/backbone.js"></script>
+<script src="http://dserban.github.com/js/underscore.js"></script>
+<script src="http://dserban.github.com/js/backbone.js"></script>
 <script src="js/app.js"></script>
 <script src="js/app_progress.js"></script>
 
