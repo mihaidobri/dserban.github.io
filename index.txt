@@ -1,7 +1,8 @@
 Desktop User Experience:
 <script src="http://dserban.github.com/js/jquery.js"></script>
+<script src="http://dserban.github.com/js/underscore.js"></script>
+<script src="http://dserban.github.com/js/backbone.js"></script>
 <script src="http://dserban.github.com/js/handlebars.js"></script>
-<script src="http://dserban.github.com/js/zepto.min.js"></script>
 <script src="http://dserban.github.com/js/bootstrap-modal.js"></script>
 <script src="http://dserban.github.com/js/chosen/chosen.jquery.js"></script>
 <script src="http://dserban.github.com/js/backbone.localStorage-min.js"></script>
@@ -11,6 +12,7 @@ Desktop User Experience:
 <link rel="stylesheet" href="http://dserban.github.com/css/chosen/chosen.css">
 
 Mobile User Experience:
+<script src="http://dserban.github.com/js/zepto.min.js"></script>
 <script src="http://dserban.github.com/js/jquery.js"></script>
 <script src="http://dserban.github.com/js/jquerymobile.js"></script>
 <link rel="stylesheet" href="http://dserban.github.com/css/jquerymobile.css">
