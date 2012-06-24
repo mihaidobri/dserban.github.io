@@ -14,46 +14,49 @@
     </style>
   </head>
   <body>
-            <div id="welcomescreen" class="visualstate jumbotron masthead">
-              <div>
-                <div style="display: inline; float: left;">
-                  <p>Develop good habits.<br>Break unhealthy ones.</p>
-                </div>
-                <div style="display: inline; float:right;">
-                  <img src="http://dserban.github.com/css/images/home.png">
-                </div>
-              </div>
-              <br>
-              <a href="#"><button id="0" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Monday</button></a>
-              <br>
-              <a href="#"><button id="1" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Tuesday</button></a>
-              <br>
-              <a href="#"><button id="2" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Wednesday</button></a>
-              <br>
-              <a href="#"><button id="3" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Thursday</button></a>
-              <br>
-              <a href="#"><button id="4" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Friday</button></a>
-              <br>
-              <a href="#"><button id="5" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Saturday</button></a>
-              <br>
-              <a href="#"><button id="6" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Sunday</button></a>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <a href="#" id="progress-link"><button class="btn btn-inverse" style="width: 100%;">Track my progress</button></a>
-            </div> <!-- id="welcomescreen" -->
-            <div id="eachday" class="visualstate" style="display: none;"> </div>
-            <!-- id="eachday" -->
-            <div id="trackprogress" class="visualstate">
-              <table class="table table-striped">
-                <tbody></tbody>
-              </table>
-            </div> <!-- track progress -->
+    <div id="welcomescreen" class="visualstate jumbotron masthead">
+      <div style="display: inline; float: left; padding: 15px;">
+        <span style="font-size: 18px;">Develop good habits.<br>Break unhealthy ones.</span>
+      </div>
+      <br>
+      <button id="0" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Monday</button>
+      <br>
+      <button id="1" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Tuesday</button>
+      <br>
+      <button id="2" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Wednesday</button>
+      <br>
+      <button id="3" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Thursday</button>
+      <br>
+      <button id="4" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Friday</button>
+      <br>
+      <button id="5" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Saturday</button>
+      <br>
+      <button id="6" class="btn btn-primary pretend" style="width: 100%;">Pretend it's Sunday</button>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <button id="progress-link" class="btn btn-inverse" style="width: 100%;">Track my progress</button>
+    </div> <!-- id="welcomescreen" -->
+    <div id="eachday" class="visualstate" style="display: none;">
+    </div> <!-- id="eachday" -->
+    <div id="trackprogress" class="visualstate">
+      <div>
+        <div style="display: inline; float: left; padding: 20px;">
+          <p style="font-size: 36px;">Progress</p>
+        </div>
+        <div style="display: inline; float:right; padding: 10px;">
+          <img id="gohome" src="http://dserban.github.com/css/images/home.png">
+        </div>
+      </div>
+      <table class="table table-striped">
+        <tbody></tbody>
+      </table>
+    </div> <!-- track progress -->
     <script type="text/template" id="progress-template">
-        <td><%= name %></td><td><%= progress %>%</td>
+      <td><%= name %></td><td><%= progress %>%</td>
     </script>
   </body>
 </html>

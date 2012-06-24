@@ -17,25 +17,34 @@ for (var di = 0; di < 7; di++) {
 
 $(".pretend").on("click", function(e) { e.preventDefault(); currentDay=parseInt($(this).attr("id")); $("#welcomescreen").hide(); rewriteEachDayDivFromScratch(); $("#eachday").show(); } );
 $("#gohome").on("click", function(e) { e.preventDefault(); $(".visualstate").hide(); $("#welcomescreen").show(); } );
+
 function rewriteEachDayDivFromScratch()
 {
   $("#eachday").html("");
-  $("#eachday").append("<h2>Well, it's time to check in.</h2>");
-  $("#eachday").append("<h3>Do this at the end of each day.</h3>");
-  $("#eachday").append("<br>");
+  var txt='';
+  txt+='<div>';
+  txt+='<div style="display: inline; float: left; padding: 20px;">';
+  txt+='<p style="font-size: 36px;">Today</p>';
+  txt+='</div>';
+  txt+='<div style="display: inline; float:right; padding: 10px;">';
+  txt+='<img id="gohome" src="http://dserban.github.com/css/images/home.png">';
+  txt+='</div>';
+  txt+='</div>';
+  $("#eachday").append(txt);
+  txt='';
   var todaysHabits=dailyHabits[currentDay];
   for (var hi = 0; hi < todaysHabits.length; hi++) {
     notchecked_id='notchecked_'+hi;
     checked_id='checked_'+hi;
-    var txt='';
-    txt+='<div id="'+notchecked_id+'" class="notchecked" style="display: none;">';
+    txt+='<br>';
+    txt+='<div id="'+notchecked_id+'" class="notchecked" style="display: none; clear: both;">';
     txt+='<button class="btn btn-mini btn-inverse">☐ '+habits[hi]+'</button>';
     txt+='</div>';
-    txt+='<div id="'+checked_id+'" class="checked" style="display: none;">';
+    txt+='<div id="'+checked_id+'" class="checked" style="display: none; clear: both;">';
     txt+='<button class="btn btn-mini">☑ '+habits[hi]+'</button>';
     txt+='</div>';
-    txt+='<br>';
     $("#eachday").append(txt);
+    txt='';
     if (dailyHabits[currentDay][hi] == 0)
     {
       $("#"+notchecked_id).show();
@@ -45,8 +54,8 @@ function rewriteEachDayDivFromScratch()
       $("#"+checked_id).show();
     }
   }
-  $(".notchecked").on("click", function(e) { console.log(e); 
-	   e.preventDefault(); var currentHabit=parseInt($(this).attr("id").replace(/^notchecked_/, "")); dailyHabits[currentDay][currentHabit]=1; $("#notchecked_"+currentHabit).hide(); $("#checked_"+currentHabit).show(); } );
-  $(".checked").on("click", function(e) { e.preventDefault(); var currentHabit=parseInt($(this).attr("id").replace(/^checked_/, "")); dailyHabits[currentDay][currentHabit]=0; $("#checked_"+currentHabit).hide(); $("#notchecked_"+currentHabit).show(); } );
+  $("#gohome").on("click", function(e) { e.preventDefault(); $(".visualstate").hide(); $("#welcomescreen").show(); } );
+  $(".notchecked").click( function(e) { e.preventDefault(); var currentHabit=parseInt($(this).attr("id").replace(/^notchecked_/, "")); dailyHabits[currentDay][currentHabit]=1; $("#notchecked_"+currentHabit).hide(); $("#checked_"+currentHabit).show(); } );
+  $(".checked").click( function(e) { e.preventDefault(); var currentHabit=parseInt($(this).attr("id").replace(/^checked_/, "")); dailyHabits[currentDay][currentHabit]=0; $("#checked_"+currentHabit).hide(); $("#notchecked_"+currentHabit).show(); } );
 }
 
