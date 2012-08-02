@@ -1058,4 +1058,10 @@ enough to receive the copy.</code></pre>
   </body>
 </html>
 <script src="http://dserban.github.com/js/zepto.min.js"></script>
+<script>
+Zepto(function($) {
+  var ua = navigator.userAgent;
+  if (ua.match(/Android|iPhone|iPad|Mobile/i)) { $("#meta").hide(); }
+});
+</script>
 
