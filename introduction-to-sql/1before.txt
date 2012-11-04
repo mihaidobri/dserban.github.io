@@ -1,0 +1,65 @@
+CREATE TABLE presidencies (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  first_name VARCHAR(255),
+  other_names VARCHAR(255),
+  year_from INTEGER,
+  year_to INTEGER,
+  notes TEXT
+);
+INSERT INTO presidencies VALUES (
+  NULL,
+  "Barack",
+  "Obama",
+  2009,
+  2012,
+  "Won against John McCain"
+);
+UPDATE presidencies SET notes = "His campaign slogan was yes-we-can" WHERE id = 1;
+DELETE FROM presidencies WHERE id = 1;
+INSERT INTO presidencies VALUES (NULL, "Theodore", "Roosevelt", 1905, 1908, "");
+INSERT INTO presidencies VALUES (NULL, "William", "Taft", 1909, 1912, "");
+INSERT INTO presidencies VALUES (NULL, "Woodrow", "Wilson", 1913, 1916, "1st term; WW 1 begins");
+INSERT INTO presidencies VALUES (NULL, "Woodrow", "Wilson", 1917, 1920, "2nd term; WW 1 ends");
+INSERT INTO presidencies VALUES (NULL, "Warren", "Harding", 1921, 1922, "");
+INSERT INTO presidencies VALUES (NULL, "Calvin", "Coolidge", 1923, 1924, "1st term");
+INSERT INTO presidencies VALUES (NULL, "Calvin", "Coolidge", 1925, 1928, "2nd term");
+INSERT INTO presidencies VALUES (NULL, "Herbert", "Hoover", 1929, 1932, "");
+INSERT INTO presidencies VALUES (NULL, "Franklin", "D. Roosevelt", 1933, 1936, "1st term");
+INSERT INTO presidencies VALUES (NULL, "Franklin", "D. Roosevelt", 1937, 1940, "2nd term; WW 2 begins");
+INSERT INTO presidencies VALUES (NULL, "Franklin", "D. Roosevelt", 1941, 1944, "3rd term");
+INSERT INTO presidencies VALUES (NULL, "Harry", "Truman", 1945, 1948, "1st term; WW 2 ends");
+INSERT INTO presidencies VALUES (NULL, "Harry", "Truman", 1949, 1952, "2nd term");
+INSERT INTO presidencies VALUES (NULL, "Dwight", "Eisenhower", 1953, 1956, "1st term");
+INSERT INTO presidencies VALUES (NULL, "Dwight", "Eisenhower", 1957, 1960, "2nd term");
+INSERT INTO presidencies VALUES (NULL, "John", "F. Kennedy", 1961, 1963, "");
+INSERT INTO presidencies VALUES (NULL, "Lyndon", "Johnson", 1964, 1964, "Took over when JFK was assassinated");
+INSERT INTO presidencies VALUES (NULL, "Lyndon", "Johnson", 1965, 1968, "2nd term");
+INSERT INTO presidencies VALUES (NULL, "Richard", "Nixon", 1969, 1972, "1st term");
+INSERT INTO presidencies VALUES (NULL, "Richard", "Nixon", 1973, 1974, "2nd term");
+INSERT INTO presidencies VALUES (NULL, "Gerald", "Ford", 1975, 1976, "");
+INSERT INTO presidencies VALUES (NULL, "Jimmy", "Carter", 1977, 1980, "");
+INSERT INTO presidencies VALUES (NULL, "Ronald", "Reagan", 1981, 1984, "1st term");
+INSERT INTO presidencies VALUES (NULL, "Ronald", "Reagan", 1985, 1988, "2nd term");
+INSERT INTO presidencies VALUES (NULL, "George", "H. W. Bush", 1989, 1992, "");
+INSERT INTO presidencies VALUES (NULL, "Bill", "Clinton", 1993, 1996, "1st term");
+INSERT INTO presidencies VALUES (NULL, "Bill", "Clinton", 1997, 2000, "2nd term");
+INSERT INTO presidencies VALUES (NULL, "George", "W. Bush", 2001, 2004, "1st term");
+INSERT INTO presidencies VALUES (NULL, "George", "W. Bush", 2005, 2008, "2nd term");
+INSERT INTO presidencies VALUES (NULL, "Barack", "Obama", 2009, 2012, "");
+CREATE INDEX index_on_year_from ON presidencies (year_from);
+CREATE INDEX index_on_year_to   ON presidencies (year_to);
+CREATE TABLE continents (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  continent_name VARCHAR(255)
+);
+CREATE TABLE countries (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  continent_id INTEGER NOT NULL,
+  country_name VARCHAR(255)
+);
+CREATE TABLE cities (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  country_id INTEGER NOT NULL,
+  city_name VARCHAR(255)
+);
+

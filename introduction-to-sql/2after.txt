@@ -1,0 +1,83 @@
+CREATE INDEX index_on_country_id   ON cities    (country_id);
+CREATE INDEX index_on_continent_id ON countries (continent_id);
+CREATE INDEX index_on_city_name    ON cities    (city_name);
+CREATE INDEX index_on_country_name ON countries (country_name);
+CREATE VIEW augmented_cities AS
+SELECT
+  city_name, country_name, continent_name
+FROM
+  cities, countries, continents
+WHERE
+  cities.country_id = countries.id
+  AND
+  countries.continent_id = continents.id;
+CREATE VIEW continent_statistics AS
+SELECT
+  continent_name, how_many_countries
+FROM
+  continents,
+  (SELECT continent_id, COUNT(*) AS how_many_countries FROM countries GROUP BY continent_id) AS breakdows
+WHERE
+  continents.id = breakdows.continent_id;
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  user_name VARCHAR(255)
+);
+CREATE TABLE projects (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  project_name VARCHAR(255)
+);
+CREATE TABLE contributorships (
+  id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  user_id INTEGER NOT NULL,
+  project_id INTEGER NOT NULL
+);
+INSERT INTO users VALUES (1, "alex-morega");
+INSERT INTO users VALUES (2, "gvoicu");
+INSERT INTO users VALUES (3, "igstan");
+INSERT INTO users VALUES (4, "dserban");
+INSERT INTO users VALUES (5, "torvalds");
+INSERT INTO projects VALUES (1, "torvalds/linux");
+INSERT INTO projects VALUES (2, "rosedu/WebDev");
+INSERT INTO projects VALUES (3, "rosedu/wouso");
+INSERT INTO projects VALUES (4, "rosedu/techblog");
+INSERT INTO projects VALUES (5, "rosedu/StartTheDark");
+INSERT INTO projects VALUES (6, "gvoicu/miniflow");
+INSERT INTO projects VALUES (7, "rails/rails");
+INSERT INTO projects VALUES (8, "sinatra/sinatra");
+INSERT INTO projects VALUES (9, "mitsuhiko/flask");
+INSERT INTO contributorships VALUES ( 1, 1, 2);
+INSERT INTO contributorships VALUES ( 2, 1, 3);
+INSERT INTO contributorships VALUES ( 3, 1, 9);
+INSERT INTO contributorships VALUES ( 4, 2, 2);
+INSERT INTO contributorships VALUES ( 5, 2, 6);
+INSERT INTO contributorships VALUES ( 6, 2, 7);
+INSERT INTO contributorships VALUES ( 7, 2, 8);
+INSERT INTO contributorships VALUES ( 8, 3, 2);
+INSERT INTO contributorships VALUES ( 9, 3, 6);
+INSERT INTO contributorships VALUES (10, 4, 1);
+INSERT INTO contributorships VALUES (11, 4, 2);
+INSERT INTO contributorships VALUES (12, 4, 3);
+INSERT INTO contributorships VALUES (13, 4, 4);
+INSERT INTO contributorships VALUES (14, 4, 5);
+INSERT INTO contributorships VALUES (15, 4, 6);
+INSERT INTO contributorships VALUES (16, 4, 7);
+INSERT INTO contributorships VALUES (17, 4, 8);
+INSERT INTO contributorships VALUES (18, 5, 1);
+CREATE INDEX index_on_user_name    ON users    (user_name);
+CREATE INDEX index_on_project_name ON projects (project_name);
+CREATE INDEX index_on_user_id    ON contributorships (user_id);
+CREATE INDEX index_on_project_id ON contributorships (project_id);
+CREATE UNIQUE INDEX unique_index_on_user_id_and_project_id ON contributorships (user_id,project_id);
+CREATE VIEW augmented_contributorships AS
+SELECT
+  user_name, project_name
+FROM
+  contributorships,
+  users,
+  projects
+WHERE
+  users.id = contributorships.user_id
+  AND
+  projects.id = contributorships.project_id;
+
