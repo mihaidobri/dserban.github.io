@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CDL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 30px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbargit-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#"><img src="img/cdl-logo-3f-big.png"></a>
+          <div class="nav-collapse collapse">
+            <ul class="nav" style="margin-top:11px;">
+              <li class="cdlmenuitem" id="acasa">        <a href="#">Acasă</a>        </li>
+              <li>
+                <a href="http://cdl.rosedu.org/blog/" target="_blank">Blog</a>
+              </li>
+              <li class="cdlmenuitem" id="cursanti">     <a href="#">Cursanți</a>     </li>
+              <li class="cdlmenuitem" id="cursuri">      <a href="#">Cursuri</a>      </li>
+              <li class="cdlmenuitem" id="calendar">     <a href="#">Calendar</a>     </li>
+              <li class="cdlmenuitem" id="proiecte">     <a href="#">Proiecte</a>     </li>
+              <li class="cdlmenuitem" id="organizatori"> <a href="#">Organizatori</a> </li>
+              <li class="cdlmenuitem" id="sponsori">     <a href="#">Sponsori</a>     </li>
+              <li class="cdlmenuitem" id="english">      <a href="#">English</a>      </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="wrap">
+      <div class="visualstate" id="acasa_content">
+        <h3>Ce este CDL?</h3>
+        <p><strong>Cursul de dezvoltare liberă</strong> este un curs/laborator alternativ, cu o durată de 8 - 9 săptămâni, pentru studenții din Universitatea Politehnica din București despre dezvoltarea de software liber, despre unelte utile şi despre ce înseamnă o comunitate open source.</p>
+        <p>În urma succesului cursului de anii trecuți ne bucurăm să vă anunţăm că anul acesta va avea loc cea de-a șasea ediţie a cursului, iar componenţa cursului va fi asemănătoare celei de anul trecut.</p>
+        <p>Aflați mai multe în <a href="http://blog.cs.pub.ro/2011/12/cdl-v4-0/" target="_blank">acest</a> blog post. :)</p>
+        <p><a href="#" class="cdlmenuitem" id="inscriere"><button class="btn"><strong>Înscriere</strong></button></a>
+        <a href="#" class="cdlmenuitem" id="calendar"><button class="btn">Calendar</button></a>
+        <a href="#" class="cdlmenuitem" id="organizatori"><button class="btn">Contact</button></a></p>
+        <p><strong>Alte ediţii:</strong> <a href="http://cdl.rosedu.org/2011-fall/" target="_blank">2011 toamna</a>, <a href="http://cdl.rosedu.org/2011/" target="_blank">2011 primăvara</a>, <a href="http://cdl.rosedu.org/2010/" target="_blank">2010</a>, <a href="http://cdl.rosedu.org/2009/" target="_blank">2009</a>.</p>
+        <p>Urmărește ultimele noutăți despre CDL pe <a href="https://www.facebook.com/rosedu.org" target="_blank">Facebook</a>, <a href="https://plus.google.com/114233516141809762907/" target="_blank">Google+</a> și <a href="https://twitter.com/rosedu_org" target="_blank">Twitter</a>.</p>
+        <p><em>Notă:</em> Cursul nu intră în programa școlară și nu aduce credite în plus.</p>
+      </div><!-- /acasa_content -->
+
+      <div class="visualstate" id="cursanti_content" style="display: none;">
+        <h3>Cursanți CDL</h3>
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <th>Nume</th>
+              <th>Grupa</th>
+              <th>Proiect</th>
+            </tr>
+            <tr>
+              <td>Flavius Anton</td>
+              <td>314cb</td>
+              <td>pidgin</td>
+            </tr>
+            <tr>
+              <td>Dragoș Badea</td>
+              <td>313ca</td>
+              <td>WoUSO</td>
+            </tr>
+            <tr>
+              <td>Adrian Bogatu</td>
+              <td>315ca</td>
+              <td>pidgin</td>
+            </tr>
+            <tr>
+              <td>Vladimir Cernov</td>
+              <td>323cc</td>
+              <td>openSIPS</td>
+            </tr>
+            <tr>
+              <td>Andrei Datcu</td>
+              <td>315cc</td>
+              <td>digikam</td>
+            </tr>
+            <tr>
+              <td>Cosmin Dragomir</td>
+              <td>311ca</td>
+              <td>pidgin</td>
+            </tr>
+            <tr>
+              <td>Alexandru Fărcășanu</td>
+              <td>314ca</td>
+              <td>dexonline</td>
+            </tr>
+            <tr>
+              <td>Octavian Nastasie</td>
+              <td>314cb</td>
+              <td>dexonline</td>
+            </tr>
+            <tr>
+              <td>Adrian Nițu</td>
+              <td>315ca</td>
+              <td>digikam</td>
+            </tr>
+            <tr>
+              <td>Szabolcs Orban</td>
+              <td>311cc</td>
+              <td>openSIPS</td>
+            </tr>
+            <tr>
+              <td>Paul Săpunaru</td>
+              <td>323cc</td>
+              <td>WoUSO</td>
+            </tr>
+            <tr>
+              <td>Bogdan Stoian</td>
+              <td>315cc</td>
+              <td>openSIPS</td>
+            </tr>
+            <tr>
+              <td>Mihai Zamfirescu</td>
+              <td>314ca</td>
+              <td>WoUSO</td>
+            </tr>
+            <tr>
+              <td colspan=3></td>
+            </tr>
+            <tr>
+              <td colspan=3>Vă mulțumim tuturor pentru interesul acordat Cursului de Dezvoltare Liberă. Fiecare aplicant, inclusiv cei care nu au fost acceptați, va primi un feedback detaliat în curând, feedback ce sperăm să vă ajute la următoarele aplicații.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- /cursanti_content -->
+
+      <div class="visualstate" id="cursuri_content" style="display: none;">
+        <h3>Curs 1</h3>
+        <ul>
+          <li>Introducere</li>
+          <li>Project Management / Redmine</li>
+          <li>Despre GSoC</li>
+          <li>Proiecte</li>
+        </ul>
+        <p>
+          <a href="#" class="cdlmenuitem" id="curs_1_detalii">Detalii</a>
+        </p>
+        <h3>Curs 2</h3>
+        <ul>
+          <li>Editare (Vim)</li>
+          <li>Versionare (Git)</li>
+        </ul>
+        <p>
+          <a href="#" class="cdlmenuitem" id="curs_2_detalii">Detalii</a>
+        </p>
+        <h3>Curs 3</h3>
+        <ul>
+          <li>Code readability</li>
+          <li>Python</li>
+        </ul>
+        <p>
+          <a href="#" class="cdlmenuitem" id="curs_3_detalii">Detalii</a>
+        </p>
+        <h3>Curs 4</h3>
+        <ul>
+          <li>Graphical User Interfaces (Gtk)</li>
+        </ul>
+        <p>
+          <a href="#" class="cdlmenuitem" id="curs_4_detalii">Detalii</a>
+        </p>
+        <h3>Curs 5</h3>
+        <ul>
+          <li>Object Oriented Programming</li>
+          <li>Design Patterns</li>
+        </ul>
+        <p>
+          <a href="#" class="cdlmenuitem" id="curs_5_detalii">Detalii</a>
+        </p>
+        <h3>Curs 6</h3>
+        <ul>
+          <li>###</li>
+          <li>###</li>
+        </ul>
+        <p>
+          <a href="#" class="cdlmenuitem" id="curs_6_detalii">Detalii</a>
+        </p>
+        <h3>Curs 7</h3>
+        <ul>
+          <li>###</li>
+          <li>###</li>
+        </ul>
+        <p>
+          <a href="#" class="cdlmenuitem" id="curs_7_detalii">Detalii</a>
+        </p>
+        <h3>Curs 8</h3>
+        <ul>
+          <li>###</li>
+          <li>###</li>
+        </ul>
+        <p>
+          <a href="#" class="cdlmenuitem" id="curs_8_detalii">Detalii</a>
+        </p>
+      </div><!-- /cursuri_content -->
+
+      <div id="calendar_content" class="visualstate" style="display: none;">
+        <h3>Calendar</h3>
+        <p>Hello World</p>
+      </div> <!-- /calendar_content -->
+
+      <div id="proiecte_content" class="visualstate" style="display: none;">
+        <h3>Proiecte</h3>
+        <p>Dacă ești unul dintre studenții înscriși la ediția de anul acesta a Cursului de Dezvoltare Liberă, te invităm să afli mai multe despre proiectele la care ai putea să lucrezi semestrul acesta!</p>
+        <p>Pidgin: <a href="#" class="cdlmenuitem" id="project_pidgin">pidgin</a></p>
+        <p>OpenSIPS: <a href="#" class="cdlmenuitem" id="project_opensips">opensips</a></p>
+        <p>Digikam: <a href="#" class="cdlmenuitem" id="project_digikam">digikam</a></p>
+        <p>DexOnline: <a href="#" class="cdlmenuitem" id="project_dexonline">dexonline</a></p>
+        <p>WoUSO on Android: <a href="#" class="cdlmenuitem" id="project_awouso">awouso</a></p>
+        <p>More details to come, stay tuned.</p>
+      </div> <!-- /proiecte_content -->
+
+      <div id="organizatori_content" class="visualstate" style="display: none;">
+        <h3>Contact</h3>
+        <p>Ne găsiți pe canalul de IRC #rosedu (freenode) sau ne puteți trimite un mail la <a href="mailto:cdl@rosedu.org">cdl@rosedu.org</a>.</p>
+        <h3>Organizatori şi organizare</h3>
+        <p><strong>Cursul de Dezvoltare Liberă</strong> (în engleză Community & Development Lab) vă este adus de <a href="http://www.rosedu.org/" target="_blank">Echipa ROSEdu</a>.</p>
+        <h3>Credits</h3>
+        <p>(în ordine alfabetică):
+        <br>
+        Mihai Bărbulescu, Mihai Bivol, Ștefan Bucur, Victor Cărbune, Răzvan Crainea, Răzvan Deaconescu, Mihnea Dobrescu-Balaur, Vlad Dogaru, <a href="#" class="cdlmenuitem" id="organizer_alexef">Alex Eftimie</a>, Andrada Georgescu, Bogdan-Andrei Iancu, <a href="#" class="cdlmenuitem" id="organizer_alexj">Alex Juncu</a>, <a href="#" class="cdlmenuitem" id="organizer_tinamanea">Valentina Manea</a>, <a href="#" class="cdlmenuitem" id="organizer_mmaruseac">Mihai Maruseac</a>, <a href="#" class="cdlmenuitem" id="organizer_alexm">Alex Morega</a>, Mariana Mărășoiu, Veaceslav Munteanu, <a href="#" class="cdlmenuitem" id="organizer_andreip">Andrei Petre</a>, Irina Preșa, <a href="#" class="cdlmenuitem" id="organizer_adrian_sc">Adrian Scoică</a>, Adrian Radu, Ionuț Radu, Sorina Sandu, Laura Vasilescu, Alina Vlăduțu şi prietenii.</p>
+
+      </div> <!-- id="organizatori_content" -->
+
+      <div id="sponsori_content" class="visualstate" style="display: none;">
+        <h3>CDL este sponsorizat de</h3>
+        <p>Hello World</p>
+      </div> <!-- /sponsori_content -->
+
+      <div id="english_content" class="visualstate" style="display: none;">
+        <h3>English</h3>
+        <p>Hello World</p>
+      </div> <!-- /english_content -->
+
+      <div id="inscriere_content" class="visualstate" style="display: none;">
+        <h3>Înscriere</h3>
+        <p>Hello World</p>
+      </div> <!-- /inscriere_content -->
+
+      <div id="drepturi_content" class="visualstate" style="display: none;">
+        <h3>Condiții și drepturi de folosire</h3>
+        <p>Hello World</p>
+      </div> <!-- /drepturi_content -->
+
+      <div id="curs_1_detalii_content" class="visualstate" style="display: none;">
+        <h3>Cursul 1</h3>
+        <h4>Project Management / Redmine</h4>
+        <ul>
+          <li>Autor: Răzvan Deaconescu</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs1_redmine.pdf" target="_blank">pdf</a></li>
+        </ul>
+        <h4>Despre GSoC</h4>
+        <ul>
+          <li>Autor: Mihai Bivol</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs1_gsoc.pdf" target="_blank">pdf</a></li>
+        </ul>
+      </div> <!-- /curs_1_detalii_content -->
+
+      <div id="curs_2_detalii_content" class="visualstate" style="display: none;">
+        <h3>Cursul 2</h3>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+      </div> <!-- /curs_2_detalii_content -->
+
+      <div id="curs_3_detalii_content" class="visualstate" style="display: none;">
+        <h3>Cursul 3</h3>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+      </div> <!-- /curs_3_detalii_content -->
+
+      <div id="curs_4_detalii_content" class="visualstate" style="display: none;">
+        <h3>Cursul 4</h3>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+      </div> <!-- /curs_4_detalii_content -->
+
+      <div id="curs_5_detalii_content" class="visualstate" style="display: none;">
+        <h3>Cursul 5</h3>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+      </div> <!-- /curs_5_detalii_content -->
+
+      <div id="curs_6_detalii_content" class="visualstate" style="display: none;">
+        <h3>Cursul 6</h3>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+      </div> <!-- /curs_6_detalii_content -->
+
+      <div id="curs_7_detalii_content" class="visualstate" style="display: none;">
+        <h3>Cursul 7</h3>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+      </div> <!-- /curs_7_detalii_content -->
+
+      <div id="curs_8_detalii_content" class="visualstate" style="display: none;">
+        <h3>Cursul 8</h3>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+        <h4>###</h4>
+        <ul>
+          <li>Autor: _</li>
+          <li>Prezentare: <a href="http://cdl.rosedu.org/2012/store/slides/curs_.pdf" target="_blank">pdf</a></li>
+        </ul>
+      </div> <!-- /curs_8_detalii_content -->
+
+      <div id="project_pidgin_content" class="visualstate" style="display: none;">
+        <h3>Proiect CDL: Pidgin</h3>
+        <ul>
+          <li><strong>URL</strong>: <a href="http://pidgin.im/" target="_blank">http://pidgin.im/</a></li>
+          <li><strong>Development</strong>: <a href="https://github.com/rosedu/Pidgin" target="_blank">https://github.com/rosedu/Pidgin</a></li>
+        </ul>
+      </div> <!-- /project_pidgin_content -->
+
+      <div id="project_opensips_content" class="visualstate" style="display: none;">
+        <h3>Proiect CDL: OpenSIPS</h3>
+        <ul>
+          <li><strong>URL</strong>: <a href="http://www.opensips.org/" target="_blank">http://www.opensips.org/</a></li>
+          <li><strong>Development</strong>: <a href="http://sourceforge.net/projects/opensips" target="_blank">http://sourceforge.net/projects/opensips</a></li>
+        </ul>
+      </div> <!-- /project_opensips_content -->
+
+      <div id="project_digikam_content" class="visualstate" style="display: none;">
+        <h3>Proiect CDL: DigiKam</h3>
+        <ul>
+          <li><strong>URL</strong>: <a href="http://digikam.org/" target="_blank">http://digikam.org/</a></li>
+          <li><strong>Development</strong>: <a href="http://www.digikam.org/drupal/download?q=download/GIT" target="_blank">http://www.digikam.org/drupal/download?q=download/GIT</a></li>
+        </ul>
+      </div> <!-- /project_digikam_content -->
+
+      <div id="project_dexonline_content" class="visualstate" style="display: none;">
+        <h3>Proiect CDL: DEX online</h3>
+        <ul>
+          <li><strong>URL</strong>: <a href="http://dexonline.ro/" target="_blank">http://dexonline.ro/</a></li>
+          <li><strong>Development</strong>: <a href="http://wiki.dexonline.ro/" target="_blank">http://wiki.dexonline.ro/</a></li>
+        </ul>
+      </div> <!-- /project_dexonline_content -->
+
+      <div id="project_awouso_content" class="visualstate" style="display: none;">
+        <h3>Proiect CDL: WoUSO on Android</h3>
+        <ul>
+          <li><strong>URL</strong>: <a href="http://wouso.rosedu.org/" target="_blank">http://wouso.rosedu.org/</a></li>
+        </ul>
+      </div> <!-- /project_awouso_content -->
+
+      <div id="organizer_alexef_content" class="visualstate" style="display: none;">
+        <h3>Alex Eftimie</h3>
+        <p><img id="alexef_pic" src="http://www.gravatar.com/avatar/d43fad239b039cebdb4206cdc692f314?s=80" style="float: right; margin-left: 10px;"> Răspunde la cereri pe alex(at)rosedu(dot)org. Folosește și recomandă <a href="http://ubuntu.ro/">Ubuntu</a>. Îi place web-ul. Legendele spun că face widgets. Are și <a href="http://alex.eftimie.ro/" target="_blank">blog</a>, cheamă studenții la <a href="http://planet.cs.pub.ro/" target="_blank">planetă</a> - condiție: să scrie despre Counter Strike.</p>
+      </div> <!-- /organizer_alexef_content -->
+
+      <div id="organizer_alexj_content" class="visualstate" style="display: none;">
+        <h3>Alex Juncu</h3>
+        <ul>
+          <li>Alexandru Juncu a.k.a. AJ or AlexJ</li>
+          <li>Student la Calculatoare, seria CA promoţia 2010</li>
+          <li>Născut în Bacău la 18 Decembrie 1986</li>
+          <li>Interese: Computer Science, Networking, Open Software</li>
+          <li>Ocupaţii în afara facultăţii: Instructor CCNA, Asistent Utilizarea Sistemelor de Operare, Alcoolic</li>
+          <li>Blog: <a href="http://alexj.info/" target="_blank">alexj.info: Computer Science Journal</a></li>
+        </ul>
+      </div> <!-- /organizer_alexj_content -->
+
+      <div id="organizer_tinamanea_content" class="visualstate" style="display: none;">
+        <h3>Valentina Manea</h3>
+        <ul>
+          <li>băutoare convinsă de apă plată (cu sau fără lamâie) şi, ocazional, de bere.</li>
+          <li>gamer semivindecat</li>
+          <li>a început să fie interesată de calculatoare de prin clasa a 7-a când cineva i-a povestit cum poţi folosi <code>netstat -b</code> pentru a afla IP-ul cuiva.</li>
+          <li>a urmat fascinaţia pentru reţele (perioada CCNA) şi, tot prin clasa a 10-a, primul contact cu Linux.</li>
+          <li>... acum e prinsă între reţele şi programare, cu accent de ceva timp pe ultima şi este utilizator credincios de Linux (Arch).</li>
+          <li>last but not least: Pidgin lover!</li>
+          <li>to be continued</li>
+        </ul>
+      </div> <!-- /organizer_tinamanea_content -->
+
+      <div id="organizer_mmaruseac_content" class="visualstate" style="display: none;">
+        <h3>Mihai Maruseac</h3>
+        <p>Warning: info is old, update is planned.</p>
+        <ul>
+          <li>Nume complet: Mihai Maruseac</li>
+          <li>Nume scurt: <strong>MM</strong></li>
+          <li>Alint rețea: <strong>mm</strong>, MM, Mithrandir, mmaruseacph2, mmaruseac, pilgrimgray, etc.</li>
+          <li>Aniversare: 15 ianuarie</li>
+          <li>Origine: Suceava, România</li>
+          <li>Interese: FOSS, AI, Linux, Calculatoare, Metode Numerice, Computers, programare, SF/Fantasy Literature, SO, Math, Python, OpenGL, Game Design, Arimaa, Game Programming, companii plăcute, discuții libere, Andromeda, etc.</li>
+          <li>Blog: <a href="http://pilgrimgray.wordpress.com/" target="_blank">pilgrimgray - blogul principal</a></li>
+          <li>Fav quote: <em>All that we have to decide is what we do with the time that is given to us</em></li>
+        </ul>
+      </div> <!-- /organizer_mmaruseac_content -->
+
+      <div id="organizer_alexm_content" class="visualstate" style="display: none;">
+        <h3>Alex Morega</h3>
+        <p>Răspunde la mesaje pe adresa “alex”, după care un caracter “arond”, după care “grep” și terminația “ro”. Poate așa crawlerii de adrese de mail n-or să-l găsească. :)
+        <br>
+        E pythonist convins, la job face aplicații web, și are un piticuț pe creier care zice că neapărat codul trebuie scris curat.</p>
+      </div> <!-- /organizer_alexm_content -->
+
+      <div id="organizer_andreip_content" class="visualstate" style="display: none;">
+        <h3>Andrei Petre</h3>
+        <ul>
+          <li>îmi place să aflu lucruri noi</li>
+          <li>interese: linux, programare, AI, bere, FOSS, android, python, respond_to?(:ruby), discuții interesante, algoritmi, plimbări în aer liber, șah ...</li>
+          <li>sper ca într-o zi să învăț și C++</li>
+          <li>un viitor blog probabil <a href="http://swarm.cs.pub.ro/~anpetre/" target="_blank">aici</a></li>
+          <li>contact la p31 andrei #at# gmail #dot# com</li>
+        </ul>
+      </div> <!-- /organizer_andreip_content -->
+
+      <div id="organizer_adrian_sc_content" class="visualstate" style="display: none;">
+        <h3>Adrian Scoică</h3>
+        <p>Îi puteți scrie la adrian.sc #at# rosedu #dot# org. Îi plac algoritmica și limbajele formale, este fan convins <a href="http://www.cplusplus.com/" target="_blank">C++</a>, si în timpul liber citește despre lingvistică computațională și modelarea limbajului natural.
+        <br>
+        Acceptă orice fel de invitații la test drive-uri Mazda :)</p>
+      </div> <!-- /organizer_adrian_sc_content-->
+    </div> <!-- /container -->
+
+    <footer class="container">
+        <p style="float:left;margin:0;padding:0;">
+          &copy; 2013 <a href="http://www.rosedu.org" target="_blank">ROSEdu</a><br>
+          <a href="#" class="cdlmenuitem" id="drepturi">Condiții și drepturi de folosire</a><br>
+          <a href="https://cdl.rosedu.org/2012/?do=login" target="_blank">log in</a>
+        </p>
+        <p style="float:right;margin:0;padding:0;margin-top:8px;"><img src="img/logo-header.png" width="200"></p>
+        <br style="clear:both;">
+    </footer>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
+
