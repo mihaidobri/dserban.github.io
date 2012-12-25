@@ -14,14 +14,6 @@ $("#menu_header").on("click", function(e) {
   history.pushState("#acasa_content", "/", window.location.href);
 });
 
-$("#calendar_iframe_resizer").on("click", function(e) {
-  e.preventDefault();
-  // toggle between 800 and 275
-  var calendar_iframe_width = $("#calendar_iframe").attr("width");
-  var new_width = 1075 - parseInt(calendar_iframe_width);
-  $("#calendar_iframe").attr("width", new_width);
-});
-
 window.addEventListener('popstate', function(event) {
   if (typeof event.state === "string") {
     $(".visualstate").hide();
@@ -42,10 +34,6 @@ Zepto(function($) {
   }
   for (var img_id in all_images) {
     $(img_id).attr("src", all_images[img_id]);
-  }
-  var ua = navigator.userAgent;
-  if (ua.match(/Android|iPhone|iPad|Mobile/i)) {
-    $("#calendar_iframe").attr("width", 275);
   }
 });
 
