@@ -3,14 +3,14 @@ $(".cdlmenuitem").on("click", function(e) {
   $(".visualstate").hide();
   id_of_click_target = $(this).attr("id");
   css_selector_to_display = "#" + id_of_click_target + "_content";
-  $(css_selector_to_display).show();
+  $(css_selector_to_display).css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
   history.pushState(css_selector_to_display, "/", window.location.href);
 });
 
 $("#menu_header").on("click", function(e) {
   e.preventDefault();
   $(".visualstate").hide();
-  $("#acasa_content").show();
+  $("#acasa_content").css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
   history.pushState("#acasa_content", "/", window.location.href);
 });
 
@@ -22,7 +22,7 @@ $("#calendar_iframe_resizer").on("click", function(e) {
 window.addEventListener('popstate', function(event) {
   if (typeof event.state === "string") {
     $(".visualstate").hide();
-    $(event.state).show();
+    $(event.state).css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
   };
 });
 
