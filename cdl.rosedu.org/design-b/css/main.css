@@ -16,6 +16,7 @@ h4 {
 
 strong {
   font-family: 'OpenSansRegular', Arial, sans-serif;
+  font-weight: normal;
 }
 
 em {
@@ -173,10 +174,9 @@ a {
   margin: 0;
   vertical-align: middle;
   display: inline-block;
-  padding: 6px 10px;
+  padding: 6px 15px;
   margin-bottom: 0;
   width: auto;
-  font-family: 'OpenSansLight', Arial, sans-serif;
   color: white;
   line-height: 1.5;
   outline: 0;
