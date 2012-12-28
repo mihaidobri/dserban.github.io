@@ -1,8 +1,8 @@
 $(".cdlmenuitem").on("click", function(e) {
   e.preventDefault();
   $(".visualstate").hide();
-  id_of_click_target = $(this).attr("id");
-  css_selector_to_display = "#" + id_of_click_target + "_content";
+  var id_of_click_target = $(this).attr("id");
+  var css_selector_to_display = "#" + id_of_click_target + "_content";
   $(css_selector_to_display).css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
   history.pushState(css_selector_to_display, "/", window.location.href);
 });
@@ -23,7 +23,7 @@ window.addEventListener('popstate', function(event) {
 
 Zepto(function($) {
   history.pushState("#acasa_content", "/", window.location.href);
-  all_images = {
+  var all_images = {
     "#cdl_logo":      "images/cdl.png",
     "#rosedu_logo":   "images/rosedu.png",
     "#ixia_logo":     "images/ixia.png",

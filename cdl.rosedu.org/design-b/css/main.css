@@ -77,7 +77,6 @@ a {
       .wrapper h2 {
         font-size: 30px; } }
   .wrapper h3 {
-    font-weight: bold;
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -233,7 +232,7 @@ table {
 }
 
 .table th {
-  font-weight: bold;
+  font-family: 'OpenSansRegular', Arial, sans-serif;
 }
 
 .table thead th {

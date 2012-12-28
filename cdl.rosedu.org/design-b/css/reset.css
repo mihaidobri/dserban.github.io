@@ -11,6 +11,7 @@ time, mark, audio, video {
   border: 0;
   font-size: 15px;
   vertical-align: baseline;
+  font-weight: normal;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
