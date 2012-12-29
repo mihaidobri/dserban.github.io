@@ -64,11 +64,11 @@ a {
           padding-left: 65px;
           background-size: 52px; } }
 
-#extra_buttons {
+.extra_buttons {
   display: none;
 }
 @media (max-width: 767px) {
-  #extra_buttons {
+  .extra_buttons {
     display: block;
   }
 }
@@ -185,7 +185,7 @@ a {
       color: #09784a; }
 
 .btn {
-  margin: 0;
+  margin: 0px;
   vertical-align: middle;
   display: inline-block;
   padding: 6px 15px;
