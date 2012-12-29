@@ -64,6 +64,15 @@ a {
           padding-left: 65px;
           background-size: 52px; } }
 
+#extra_buttons {
+  display: none;
+}
+@media (max-width: 767px) {
+  #extra_buttons {
+    display: block;
+  }
+}
+
 .wrapper {
   padding: 10px 5% 20px 5%;
   border-top: solid 1px white;
@@ -88,7 +97,13 @@ a {
   .wrapper #menu_wrapper {
     margin-bottom: 20px; }
     .wrapper #menu_wrapper #menu {
-      overflow: hidden; }
+      overflow: hidden;
+    }
+    @media (max-width: 767px) {
+      .wrapper #menu_wrapper #menu {
+        display: none;
+      }
+    }
     .wrapper #menu_wrapper h2 {
       margin-left: 0;
       color: #777; }
