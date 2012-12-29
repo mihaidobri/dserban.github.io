@@ -5,13 +5,21 @@ $(".cdlmenuitem").on("click", function(e) {
   var css_selector_to_display = "#" + id_of_click_target + "_content";
   $(css_selector_to_display).css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
   history.pushState(css_selector_to_display, "/", window.location.href);
+  if ($("#menu").css("display") === "none") {
+    $("#cdl_heading").hide();
+    document.getElementById("top_of_content").scrollIntoView();
+  } else {
+    document.body.scrollIntoView();
+  }
 });
 
 $("#menu_header").on("click", function(e) {
   e.preventDefault();
   $(".visualstate").hide();
+  $("#cdl_heading").show();
   $("#acasa_content").css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
   history.pushState("#acasa_content", "/", window.location.href);
+  document.body.scrollIntoView();
 });
 
 window.addEventListener('popstate', function(event) {
