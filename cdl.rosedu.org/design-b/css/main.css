@@ -29,41 +29,6 @@ a {
   color: #0b8f5a;
 }
 
-.jumbotron {
-  padding: 0 5%;
-  background: #69b373 url("../images/green-gradient.png") repeat-x right bottom;
-  display: block; }
-  @media (max-width: 767px) {
-    .jumbotron {
-      background-size: 37px; } }
-  @media (max-width: 480px) {
-    .jumbotron {
-      background-size: 25px; } }
-  .jumbotron h1 {
-    font-size: 90px; }
-    @media (max-width: 767px) {
-      .jumbotron h1 {
-        font-size: 50px; } }
-    @media (max-width: 480px) {
-      .jumbotron h1 {
-        font-size: 38px; } }
-    .jumbotron h1 a {
-      display: block;
-      padding-left: 130px;
-      color: #93f0cb;
-      text-decoration: none;
-      text-shadow: 0 -1px 0 white, 0 3px 4px #09784a;
-      line-height: 1.5; }
-      @media (max-width: 767px) {
-        .jumbotron h1 a {
-          line-height: 1.7;
-          padding-left: 90px;
-          background-size: 70px; } }
-      @media (max-width: 480px) {
-        .jumbotron h1 a {
-          padding-left: 65px;
-          background-size: 52px; } }
-
 .extra_buttons {
   display: none;
 }
@@ -142,21 +107,6 @@ a {
             background-position: right center, left top; }
         .wrapper #menu_wrapper ul li:first-child a {
           border: none; }
-    @media (max-width: 767px) {
-      .wrapper #menu_wrapper #menu.js {
-        height: 0;
-      }
-    }
-    @media (max-width: 767px) {
-      .wrapper #menu_wrapper.show_menu #menu {
-        height: auto; }
-      .wrapper #menu_wrapper.show_menu h2 {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        box-shadow: none; }
-      .wrapper #menu_wrapper.show_menu ul {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0; } }
   .wrapper .main p, .wrapper .main li {
     font-size: 15px;
     line-height: 21px; }
@@ -248,10 +198,6 @@ table {
 
 .table th {
   font-family: 'OpenSansRegular', Arial, sans-serif;
-}
-
-.table thead th {
-  vertical-align: bottom;
 }
 
 .table-striped tbody tr:nth-child(odd) td,
