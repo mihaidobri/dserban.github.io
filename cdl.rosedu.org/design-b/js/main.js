@@ -36,10 +36,13 @@ window.addEventListener('popstate', function(event) {
 });
 
 window.addEventListener('orientationchange', function(event) {
-  if (window.screen.width <= 320) {
-    $("#calendar_iframe").attr("width", 275);
-  } else {
+  var o = window.orientation;
+  if (o === 90 || o === -90) {
     $("#calendar_iframe").attr("width", "100%");
+  } else {
+    if (window.screen.width <= 320) {
+      $("#calendar_iframe").attr("width", 275);
+    }
   }
 });
 
@@ -59,8 +62,10 @@ Zepto(function($) {
   for (var img_id in all_images) {
     $(img_id).attr("src", all_images[img_id]);
   }
+
   var iframe_url = "http://www.google.com/calendar/embed?src=apve67v2o1l4tp1655sl53nhs8%40group.calendar.google.com&ctz=Europe/Bucharest&bgcolor=%23F3F3F3"
   $("#calendar_iframe").attr("src", iframe_url);
+
   if (window.screen.width <= 320) {
     $("#calendar_iframe").attr("width", 275);
   }
