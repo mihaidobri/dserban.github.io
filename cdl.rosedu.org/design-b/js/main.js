@@ -9,6 +9,7 @@ $(".cdlmenuitem").on("click", function(e) {
     $("#cdl_heading").hide();
     document.getElementById("top_of_content").scrollIntoView();
   } else {
+    $("#cdl_heading").show();
     document.body.scrollIntoView();
   }
 });
@@ -26,7 +27,20 @@ window.addEventListener('popstate', function(event) {
   if (typeof event.state === "string") {
     $(".visualstate").hide();
     $(event.state).css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
+    if ($("#menu").css("display") === "none") {
+      $("#cdl_heading").hide();
+    } else {
+      $("#cdl_heading").show();
+    }
   };
+});
+
+window.addEventListener('orientationchange', function(event) {
+  if (window.screen.width <= 320) {
+    $("#calendar_iframe").attr("width", 275);
+  } else {
+    $("#calendar_iframe").attr("width", "100%");
+  }
 });
 
 Zepto(function($) {
