@@ -3,6 +3,23 @@ $(".cdlmenuitem").on("click", function(e) {
   $(".visualstate").hide();
   var id_of_click_target = $(this).attr("id");
   var css_selector_to_display = "#" + id_of_click_target + "_content";
+
+  if (css_selector_to_display === "#calendar_content") {
+    var o = window.orientation;
+    if (o) {
+      if (o === 90 || o === -90) {
+        $("#calendar_iframe").attr("width", "100%");
+      } else {
+        if (window.screen.width <= 320) {
+          $("#calendar_iframe").attr("width", "275");
+        }
+      }
+      $(window).trigger("resize");
+    } else {
+      $("#calendar_iframe").attr("width", "100%");
+    }
+  }
+
   $(css_selector_to_display).css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
   history.pushState(css_selector_to_display, "/", window.location.href);
   if ($("#menu").css("display") === "none") {
@@ -23,7 +40,7 @@ $("#menu_header").on("click", function(e) {
   document.body.scrollIntoView();
 });
 
-window.addEventListener('popstate', function(event) {
+$(window).on("popstate", function(event) {
   if (typeof event.state === "string") {
     $(".visualstate").hide();
     $(event.state).css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
@@ -35,15 +52,16 @@ window.addEventListener('popstate', function(event) {
   };
 });
 
-window.addEventListener('orientationchange', function(event) {
+$(window).on("orientationchange", function(event) {
   var o = window.orientation;
   if (o === 90 || o === -90) {
     $("#calendar_iframe").attr("width", "100%");
   } else {
     if (window.screen.width <= 320) {
-      $("#calendar_iframe").attr("width", 275);
+      $("#calendar_iframe").attr("width", "275");
     }
   }
+  $(window).trigger("resize");
 });
 
 Zepto(function($) {
@@ -66,8 +84,6 @@ Zepto(function($) {
   var iframe_url = "http://www.google.com/calendar/embed?src=apve67v2o1l4tp1655sl53nhs8%40group.calendar.google.com&ctz=Europe/Bucharest&bgcolor=%23F3F3F3"
   $("#calendar_iframe").attr("src", iframe_url);
 
-  if (window.screen.width <= 320) {
-    $("#calendar_iframe").attr("width", 275);
-  }
+  $("#calendar_iframe").attr("width", "275");
 });
 
