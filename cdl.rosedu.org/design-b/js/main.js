@@ -1,10 +1,5 @@
-$(".cdlmenuitem").on("click", function(e) {
-  e.preventDefault();
-  $(".visualstate").hide();
-  var id_of_click_target = $(this).attr("id");
-  var css_selector_to_display = "#" + id_of_click_target + "_content";
-
-  if (css_selector_to_display === "#calendar_content") {
+function navigate(visualstate) {
+  if (visualstate === "#calendar") {
     var o = window.orientation;
     if (o) {
       if (o === 90 || o === -90) {
@@ -14,14 +9,13 @@ $(".cdlmenuitem").on("click", function(e) {
           $("#calendar_iframe").attr("width", "275");
         }
       }
-      $(window).trigger("resize");
     } else {
       $("#calendar_iframe").attr("width", "100%");
     }
   }
-
+  $(".visualstate").hide();
+  var css_selector_to_display = visualstate + "_content";
   $(css_selector_to_display).css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
-  history.pushState(css_selector_to_display, "/", window.location.href);
   if ($("#menu").css("display") === "none") {
     $("#cdl_heading").hide();
     document.getElementById("top_of_content").scrollIntoView();
@@ -29,15 +23,19 @@ $(".cdlmenuitem").on("click", function(e) {
     $("#cdl_heading").show();
     document.body.scrollIntoView();
   }
+  var base_url = window.location.href.split("#")[0];
+  history.pushState(css_selector_to_display, "/", base_url + visualstate);
+}
+
+$(".cdlmenuitem").on("click", function(e) {
+  e.preventDefault();
+  var target_visualstate = $(this).attr("id");
+  navigate(target_visualstate);
 });
 
 $("#menu_header").on("click", function(e) {
   e.preventDefault();
-  $(".visualstate").hide();
-  $("#cdl_heading").show();
-  $("#acasa_content").css({"display": "block", "opacity": 0}).animate({"opacity": 1}, 250);
-  history.pushState("#acasa_content", "/", window.location.href);
-  document.body.scrollIntoView();
+  navigate("#acasa");
 });
 
 $(window).on("popstate", function(event) {
@@ -61,11 +59,16 @@ $(window).on("orientationchange", function(event) {
       $("#calendar_iframe").attr("width", "275");
     }
   }
-  $(window).trigger("resize");
 });
 
 Zepto(function($) {
-  history.pushState("#acasa_content", "/", window.location.href);
+  var visualstate = "#" + window.location.href.split("#")[1];
+  if ( $(visualstate + "_content")[0] ) {
+    navigate(visualstate);
+  } else {
+    navigate("#acasa");
+  }
+
   var all_images = {
     "#cdl_logo":       "images/cdl.png",
     "#rosedu_logo":    "images/rosedu.png",
@@ -83,7 +86,5 @@ Zepto(function($) {
 
   var iframe_url = "http://www.google.com/calendar/embed?src=apve67v2o1l4tp1655sl53nhs8%40group.calendar.google.com&ctz=Europe/Bucharest&bgcolor=%23F3F3F3"
   $("#calendar_iframe").attr("src", iframe_url);
-
-  $("#calendar_iframe").attr("width", "275");
 });
 

@@ -210,3 +210,6 @@ table {
   background-color: #f5f5f5;
 }
 
+.visualstate {
+  display: none;
+}
