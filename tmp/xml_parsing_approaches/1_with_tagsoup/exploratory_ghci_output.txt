@@ -1,0 +1,36 @@
+$ ghci
+GHCi, version 7.6.2: http://www.haskell.org/ghc/  :? for help
+Loading package ghc-prim ... linking ... done.
+Loading package integer-gmp ... linking ... done.
+Loading package base ... linking ... done.
+Prelude> 
+Prelude> contents_of_xml_file <- readFile "t1.xml"
+Prelude> 
+Prelude> contents_of_xml_file
+"<a a1=\"sdfsd\" a2=\"dfsd\">\n<b/>\n<c c1=\"DSFsd\", c10=\"3423\">\n  <d name=\"abc\">this is a test </d>\n  <e>this is a test </e>\n  <f>this is a test </f>\n</c>\n\n<g g1=\"sdfsd\"/>\n</a> "
+Prelude> 
+Prelude> import Text.HTML.TagSoup
+Prelude Text.HTML.TagSoup> 
+Prelude Text.HTML.TagSoup> parseTags contents_of_xml_file
+Loading package array-0.4.0.1 ... linking ... done.
+Loading package deepseq-1.3.0.1 ... linking ... done.
+Loading package bytestring-0.10.0.2 ... linking ... done.
+Loading package text-0.11.2.3 ... linking ... done.
+Loading package containers-0.5.0.0 ... linking ... done.
+Loading package tagsoup-0.13 ... linking ... done.
+[TagOpen "a" [("a1","sdfsd"),("a2","dfsd")],TagText "\n",TagOpen "b" [],TagClose "b",TagText "\n",TagOpen "c" [("c1","DSFsd"),(",",""),("c10","3423")],TagText "\n  ",TagOpen "d" [("name","abc")],TagText "this is a test ",TagClose "d",TagText "\n  ",TagOpen "e" [],TagText "this is a test ",TagClose "e",TagText "\n  ",TagOpen "f" [],TagText "this is a test ",TagClose "f",TagText "\n",TagClose "c",TagText "\n\n",TagOpen "g" [("g1","sdfsd")],TagClose "g",TagText "\n",TagClose "a",TagText " "]
+Prelude Text.HTML.TagSoup> 
+Prelude Text.HTML.TagSoup> :t TagText
+TagText :: str -> Tag str
+Prelude Text.HTML.TagSoup> :t TagOpen
+TagOpen :: str -> [Attribute str] -> Tag str
+Prelude Text.HTML.TagSoup> 
+Prelude Text.HTML.TagSoup> import Data.List
+Prelude Text.HTML.TagSoup Data.List> 
+Prelude Text.HTML.TagSoup Data.List> "\n" `isPrefixOf` "\n\n"
+True
+Prelude Text.HTML.TagSoup Data.List> 
+Prelude Text.HTML.TagSoup Data.List> "\n" `isPrefixOf` "1n\n"
+False
+Prelude Text.HTML.TagSoup Data.List> 
+
