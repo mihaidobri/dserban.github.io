@@ -1,0 +1,52 @@
+$ cat famous_people.xml
+<famous_people>
+  <famous_person>
+    <first_name>Wolfgang</first_name>
+    <last_name>Goethe</last_name>
+    <year_of_birth>1749</year_of_birth>
+    <country_of_origin>Germany</country_of_origin>
+  </famous_person>
+  <famous_person>
+    <first_name>Miguel</first_name>
+    <last_name>Cervantes</last_name>
+    <widely_known_for>Don Quixote</widely_known_for>
+  </famous_person>
+</famous_people>
+
+$ cat parse_famous_people_xml.hs
+{-# LANGUAGE Arrows, NoMonomorphismRestriction #-}
+
+import Text.XML.HXT.Core
+import Text.XML.HXT.DOM.QualifiedName
+
+data FamousPerson = FamousPerson { first_name, last_name, other_info :: String } deriving (Show, Eq)
+
+getFamousPerson = deep (isElem >>> hasName "famous_person") >>> 
+  proc x -> do
+    first_name <-  getText
+               <<< getChildren
+               <<< deep (hasName "first_name")
+               -<  x
+    last_name  <-  getText
+               <<< getChildren
+               <<< deep (hasName "last_name")
+               -<  x
+    other_info <-  getText
+               <<< getChildren
+               <<< deep (hasNameWith (\qn -> not (qn `elem` [ mkQName "" "first_name" ""
+                                                            , mkQName "" "last_name" ""
+                                                            ]
+                                                 )
+                                     )
+                        )
+               -<  x
+    returnA    -< FamousPerson first_name last_name other_info
+
+main = do
+  famous_people <- runX (readDocument [withValidate no] "famous_people.xml" >>> getFamousPerson)
+  print famous_people
+
+$ runghc parse_famous_people_xml.hs
+[FamousPerson {first_name = "Wolfgang", last_name = "Goethe", other_info = "\n    "},FamousPerson {first_name = "Wolfgang", last_name = "Goethe", other_info = "\n    "},FamousPerson {first_name = "Wolfgang", last_name = "Goethe", other_info = "\n    "},FamousPerson {first_name = "Wolfgang", last_name = "Goethe", other_info = "\n    "},FamousPerson {first_name = "Wolfgang", last_name = "Goethe", other_info = "\n  "},FamousPerson {first_name = "Miguel", last_name = "Cervantes", other_info = "\n    "},FamousPerson {first_name = "Miguel", last_name = "Cervantes", other_info = "\n    "},FamousPerson {first_name = "Miguel", last_name = "Cervantes", other_info = "\n    "},FamousPerson {first_name = "Miguel", last_name = "Cervantes", other_info = "\n  "}]
+$ 
+
