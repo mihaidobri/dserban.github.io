@@ -1,0 +1,70 @@
+$ cat famous_people.xml
+<famous_people>
+  <famous_person>
+    <first_name>Wolfgang</first_name>
+    <last_name>Goethe</last_name>
+    <year_of_birth>1749</year_of_birth>
+    <country_of_origin>Germany</country_of_origin>
+  </famous_person>
+  <famous_person>
+    <first_name>Miguel</first_name>
+    <last_name>Cervantes</last_name>
+    <widely_known_for>Don Quixote</widely_known_for>
+  </famous_person>
+  <famous_person>
+    <was_he_a_painter>yes</was_he_a_painter>
+    <was_he_dutch>yes</was_he_dutch>
+    <last_name>van Gogh</last_name>
+  </famous_person>
+  <famous_person>
+    <first_name>Madonna</first_name>
+  </famous_person>
+  <famous_person>
+  </famous_person>
+</famous_people>
+
+$ runghc custom_parser.hs
+[Person {first_name = Just "Wolfgang", last_name = Just "Goethe", other_info = ["country_of_origin: Germany","year_of_birth: 1749"]},Person {first_name = Just "Miguel", last_name = Just "Cervantes", other_info = ["widely_known_for: Don Quixote"]},Person {first_name = Nothing, last_name = Just "van Gogh", other_info = ["was_he_dutch: yes","was_he_a_painter: yes"]},Person {first_name = Just "Madonna", last_name = Nothing, other_info = []},Person {first_name = Nothing, last_name = Nothing, other_info = []}]
+$ 
+$ cat custom_parser.hs
+import Text.XML.HXT.Core
+
+data Person = Person { first_name :: Maybe String
+                     , last_name  :: Maybe String
+                     , other_info :: [String]
+                     } deriving Show
+
+custom_parser :: ArrowXml a => a XmlTree [(String, String)]
+custom_parser = deep ( isElem >>> hasName "famous_person" )
+                >>>
+                listA ( getChildren
+                        >>>
+                        ( getName &&& ( getChildren >>> getText ) )
+                      )
+
+produce_well_typed_result :: [(String, String)] -> Person
+produce_well_typed_result parsed_famous_person =
+  foldl integrate_individual_tuple
+        (Person Nothing Nothing [])
+        parsed_famous_person
+    where
+      integrate_individual_tuple person_record key_value_tuple
+        | fst key_value_tuple == "first_name" =
+            Person ( (Just . snd) key_value_tuple )
+                   ( last_name person_record )
+                   ( other_info person_record )
+        | fst key_value_tuple == "last_name"  =
+            Person ( first_name person_record )
+                   ( (Just . snd) key_value_tuple )
+                   ( other_info person_record )
+        | otherwise =
+            Person ( first_name person_record )
+                   ( last_name person_record )
+                   ( (fst key_value_tuple ++ ": " ++ snd key_value_tuple) : (other_info person_record) )
+
+main :: IO ()
+main = do
+  intermediate_results <- runX $ readDocument [] "famous_people.xml" >>> custom_parser
+  let final_well_typed_results = map produce_well_typed_result intermediate_results
+  print final_well_typed_results
+
