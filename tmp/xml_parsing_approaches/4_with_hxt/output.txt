@@ -50,17 +50,14 @@ produce_well_typed_result parsed_famous_person =
     where
       integrate_individual_tuple person_record key_value_tuple
         | fst key_value_tuple == "first_name" =
-            Person ( (Just . snd) key_value_tuple )
-                   ( last_name person_record )
-                   ( other_info person_record )
+            person_record { first_name = (Just . snd) key_value_tuple }
         | fst key_value_tuple == "last_name"  =
-            Person ( first_name person_record )
-                   ( (Just . snd) key_value_tuple )
-                   ( other_info person_record )
+            person_record { last_name = (Just . snd) key_value_tuple }
         | otherwise =
-            Person ( first_name person_record )
-                   ( last_name person_record )
-                   ( (fst key_value_tuple ++ ": " ++ snd key_value_tuple) : (other_info person_record) )
+            person_record {
+              other_info =
+                (fst key_value_tuple ++ ": " ++ snd key_value_tuple) : (other_info person_record)
+            }
 
 main :: IO ()
 main = do
