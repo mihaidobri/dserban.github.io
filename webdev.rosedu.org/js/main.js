@@ -10,7 +10,7 @@ function navigate(visualstate) {
   if (visualstate === "#frontend" || visualstate === "#backend") {
     var ajax_options = {
       type: "GET",
-      url: "/calendar.json?" + Math.round(new Date().getTime()),
+      url: "/webdev.rosedu.org/calendar.json?" + Math.round(new Date().getTime()),
       dataType: "text",
       success: update_both_schedules
     };
