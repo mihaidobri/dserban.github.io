@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="fullheight">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>WebDev</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fontface.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+</head>
+<body class="fullheight">
+<div class="flexboxlayout fullheight">
+  <div class="wrapper">
+    <div class="row-fluid">
+      <div class="span3" id="menu_wrapper">
+        <!-- We use JavaScript to load images after all the text has been loaded/displayed, hence the use of src="images/transparent.png" below -->
+        <h2 id="menu_header" class="logotoppadding"><img id="webdev_logo" src="images/transparent.png" style="max-width: 100%;"></h2>
+        <div id="menu">
+          <ul style="font-family: 'OpenSansRegular';">
+            <li class="webdevmenuitem" data-id="#acasa">        <a href="#acasa">Acasă</a>             </li>
+            <li class="webdevmenuitem" data-id="#frontend">     <a href="#frontend">Frontend Track</a> </li>
+            <li class="webdevmenuitem" data-id="#backend">      <a href="#backend">Backend Track</a>   </li>
+            <li class="webdevmenuitem" data-id="#cursanti">     <a href="#cursanti">Cursanți</a>       </li>
+            <li class="webdevmenuitem" data-id="#meta">         <a href="#meta">Meta</a>               </li>
+            <li class="webdevmenuitem" data-id="#sponsori">     <a href="#sponsori">Sponsori</a>       </li>
+          </ul>
+        </div> <!-- id="menu" -->
+      </div> <!-- id="menu_wrapper" -->
+
+      <div class="main span8 offset1">
+        <span id="top_of_content"></span>
+        <div id="acasa_content" class="visualstate">
+          <h2 id="webdev_heading" style="margin-top: 12px; margin-bottom: 20px;">Curs de dezvoltare web ghidată de teste, cu o durată de 10 săptămâni, dedicat tuturor elevilor și studenților interesați de tehnologii libere, organizat de comunitatea ROSEdu și prietenii</h2>
+          <h3>Cursurile din ediția toamnă 2013 sunt organizate pe două track-uri: <a href="#frontend" class="webdevmenuitem" data-id="#frontend" style="font-size: 20px;">frontend</a> și <a href="#backend" class="webdevmenuitem" data-id="#backend" style="font-size: 20px;">backend</a>.</h3>
+          <h3>Locul desfășurării</h3>
+          <p>Cursurile WebDev se vor ține la Facultatea de Automatică și Calculatoare din cadrul Universității Politehnice București, în EG106 (sala Ixia) și EG306 (sala Intel). Detalii despre cum ajungi acolo găsești <a href="#cumseajunge" class="webdevmenuitem" data-id="#cumseajunge">aici</a>.</p>
+          <h3>Înscriere</h3>
+          <p>Cursurile WebDev sunt gratuite, însă numărul de locuri este limitat.</p>
+          <p>Pentru înscriere, completează, te rugăm, <a href="https://docs.google.com/forms/d/1kUr_lol_PFiclhv13NUCyr_qff-75Sg9OnsP2S-Pn7Y/viewform" target="_blank">acest formular</a>.</p>
+          <p>Clarificări suplimentare legate de înscriere (și în special de enunțul problemei propuse spre rezolvare) găsești <a href="https://github.com/dserban/webdev2013fall/issues/1" target="_blank">aici</a>. Dacă ai întrebări legate de înscriere, lasă un comentariu.</p>
+          <p>Termenul-limită pentru înscriere este 9 octombrie 2013, ora 23:59.</p>
+          <p><strong>UPDATE 29.09.2013, 17:00</strong><br>Mai e puțin și începe etapa a doua!<br>Candidații WebDev care au trimis soluții corecte la problema pe care v-am propus-o spre rezolvare, vor fi chemați la un interviu face-to-face începând cu data de 1 sau 2 octombrie 2013.<br>Candidații care până pe data de 2 octombrie 2013 nu au primit prin e-mail / SMS o notificare că au fost selectați pentru etapa a doua (interviul), pot trimite o nouă soluție la problema propusă, în intervalul de timp rămas pentru înscrieri, completând încă o dată formularul.</p>
+        </div> <!-- id="acasa_content" -->
+
+        <div id="frontend_content" class="visualstate">
+          <!-- We use JavaScript to load the most up-to-the-minute up-to-date course descriptions and dates from the file calendar.json, therefore the text containers inside the table cells below are empty. This workaround was necessary due to a particular behavior in Google Chrome. -->
+          <table class="table">
+            <tr>
+              <td colspan=2>
+                <h3>Frontend Track - Structură / Calendar</h3>
+                <br>
+                <strong>Cursurile de mai jos se vor ține în <a href="#cumseajunge" class="webdevmenuitem" data-id="#cumseajunge">EG306 (sala Intel)</a> în intervalul orar 10-14.<br>Hackaton-ul final se va desfășura pe parcursul celor două zile menționate mai jos, în intervalul orar 10-20.</strong>
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td><strong id="fend_1_description"></strong></td>
+              <td><strong id="fend_1_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="fend_2_description"></strong></td>
+              <td><strong id="fend_2_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="fend_3_description"></strong></td>
+              <td><strong id="fend_3_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="fend_4_description"></strong></td>
+              <td><strong id="fend_4_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="fend_5_description"></strong></td>
+              <td><strong id="fend_5_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="fend_6_description"></strong></td>
+              <td><strong id="fend_6_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="fend_7_description"></strong></td>
+              <td><strong id="fend_7_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="fend_8_description"></strong></td>
+              <td><strong id="fend_8_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="fend_9_description"></strong></td>
+              <td><strong id="fend_9_date"></strong></td>
+            </tr>
+            <tr>
+              <td colspan=2>
+                <br>
+                <strong>Programul de mai sus poate suferi modificări în funcție de disponibilitatea instructorilor.<br>Te rugăm să-l consulți ori de câte ori este necesar pentru a fi la curent cu eventuale modificări de ultim moment.</strong>
+              </td>
+            </tr>
+          </table>
+        </div> <!-- id="frontend_content" -->
+
+        <div id="backend_content" class="visualstate">
+          <!-- We use JavaScript to load the most up-to-the-minute up-to-date course descriptions and dates from the file calendar.json, therefore the text containers inside the table cells below are empty. This workaround was necessary due to a particular behavior in Google Chrome. -->
+          <table class="table">
+            <tr>
+              <td colspan=2>
+                <h3>Backend Track - Structură / Calendar</h3>
+                <br>
+                <strong>Cursurile de mai jos se vor ține în <a href="#cumseajunge" class="webdevmenuitem" data-id="#cumseajunge">EG106 (sala Ixia)</a> în intervalul orar 10-14.<br>Hackaton-ul final se va desfășura pe parcursul celor două zile menționate mai jos, în intervalul orar 10-20.</strong>
+                <br>
+                <br>
+              </td>
+            </tr>
+            <tr>
+              <td><strong id="bend_1_description"></strong></td>
+              <td><strong id="bend_1_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="bend_2_description"></strong></td>
+              <td><strong id="bend_2_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="bend_3_description"></strong></td>
+              <td><strong id="bend_3_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="bend_4_description"></strong></td>
+              <td><strong id="bend_4_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="bend_5_description"></strong></td>
+              <td><strong id="bend_5_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="bend_6_description"></strong></td>
+              <td><strong id="bend_6_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="bend_7_description"></strong></td>
+              <td><strong id="bend_7_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="bend_8_description"></strong></td>
+              <td><strong id="bend_8_date"></strong></td>
+            </tr>
+            <tr>
+              <td><strong id="bend_9_description"></strong></td>
+              <td><strong id="bend_9_date"></strong></td>
+            </tr>
+            <tr>
+              <td colspan=2>
+                <br>
+                <strong>Programul de mai sus poate suferi modificări în funcție de disponibilitatea instructorilor.<br>Te rugăm să-l consulți ori de câte ori este necesar pentru a fi la curent cu eventuale modificări de ultim moment.</strong>
+              </td>
+            </tr>
+          </table>
+        </div> <!-- id="backend_content" -->
+
+        <div id="cursanti_content" class="visualstate">
+          <h3>Cursanți WebDev</h3>
+          <br>
+          <p>Termenul-limită pentru înscriere la ediția 2013 a WebDev este 9 octombrie 2013, ora 23:59, iar după interviuri și selecție, cursanții vor fi anunțați aici (cel târziu pe 11 octombrie 2013 la ora 23:59). Vă așteptăm să vă înscrieți!</p>
+        </div> <!-- id="cursanti_content" -->
+
+        <div id="meta_content" class="visualstate">
+          <h3>Contact</h3>
+          <p>Ne găsești pe canalul de IRC #rosedu pe Freenode sau poți iniția o conversație cu noi <a href="https://github.com/dserban/webdev2013fall/issues/new" target="_blank">aici</a>.</p>
+          <br>
+          <h3>Organizatori și organizare</h3>
+          <p><strong>WebDev</strong> vă este adus de <a href="http://www.rosedu.org/" target="_blank">comunitatea ROSEdu</a>.</p>
+          <br>
+          <h3>Credits</h3>
+          <p>(în ordine alfabetică):
+          <br>
+          Andrei Bocan, Bogdan Breșug, Alexandru Burghelea, Ioan Deaconu, Andrei Maxim, Andrei Oprea, Silviu Postăvaru, Cătălin Rămășcanu, Alexandra Săndulescu, Cezar Sîrbu, Dan Șerban, Alexandru Topliceanu, Alexandru Tudorică, Marius Ursache, Gabriel Voicu și prietenii.</p>
+          <br>
+          <h3>Ediții anterioare</h3>
+          <p>
+            <a href="https://sites.google.com/a/rosedu.org/webdev/" target="_blank">Primăvară 2012</a>
+            <br>
+            <a href="https://sites.google.com/a/rosedu.org/webdev-2012-toamna/" target="_blank">Toamnă 2012</a>
+          </p>
+          <br>
+          <h3>Condiții și drepturi de folosire</h3>
+          <p>ROSEdu deține drepturile asupra întregului conținut al acestui site.</p>
+          <p>ROSEdu, în calitate de deținător al drepturilor de autor, eliberează conținutul acestui site sub licența <a href="http://www.gnu.org/licenses/fdl-1.2.html" target="_blank">GNU Free Documentation License v1.2</a>. În acest sens, accesul, distribuția și modificarea conținutului sunt libere, cu condiția păstrării autorilor inițiali. Se recomandă folosirea sintagmei "Documentație originală scrisă de membrii asociației studențești ROSEdu".</p>
+          <p>Pentru informații suplimentare, te așteptăm pe <a href="http://lists.rosedu.org/listinfo/rosedu-general" target="_blank">lista generală a ROSEdu</a> sau pe <a href="irc://irc.freenode.net">canalul IRC #rosedu</a>.</p>
+          <br>
+          <h3>Despre site</h3>
+          <p>Puteți găsi repository pentru acest site pe <a href="https://github.com/rosedu/webdev.rosedu.org" target="_blank">GitHub</a></p>
+        </div> <!-- id="meta_content" -->
+
+        <div id="sponsori_content" class="visualstate">
+          <table>
+            <tr>
+              <td class="sponsor_logo_td">
+                <!-- We use JavaScript to load images after all the text has been loaded/displayed, hence the use of src="" below -->
+                <a href="http://www.eloquentix.com/" target="_blank"><img id="elo_logo" style="max-width: 232px;" src=""></a>
+              </td>
+              <td class="sponsor_copy_td">
+                <p><strong>Sponsor: Eloquentix</strong></p>
+                <p>We are a team of passionate technologists that join nimble teams to build and grow successful products. We believe in enjoying what we do, in developing for pleasure. If we deliver simple, clean and working software we have done a good days work.</p>
+                <p>Our technological interests vary. Some are Erlang passionatos. Some love clean backbone code. Some are adamant about well tested code. Our goal is have projects and an environment where each of us can express their talents.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="sponsor_logo_td">
+                <!-- We use JavaScript to load images after all the text has been loaded/displayed, hence the use of src="" below -->
+                <a href="http://www.grapefruit.ro/" target="_blank"><img id="grapefruit_logo" style="max-width: 232px;" src=""></a>
+              </td>
+              <td class="sponsor_copy_td">
+                <p><strong>Sponsor: Grapefruit</strong></p>
+                <p>Fondată în 1999, Grapefruit este agenția de digital product development care te ajută să duci, să crești și să optimizezi un business în mediul digital. Prin competențele din trei domenii diferite (business, design și tehnologie) Grapefruit rezolvă probleme de business și, în același timp, face mai ușoară viața utilizatorilor.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="sponsor_logo_td">
+                <!-- We use JavaScript to load images after all the text has been loaded/displayed, hence the use of src="" below -->
+                <a href="http://www.eaudeweb.ro/" target="_blank"><img id="eaudeweb_logo" style="max-width: 210px;" src=""></a>
+              </td>
+              <td class="sponsor_copy_td">
+                <p><strong>Sponsor: Eau de Web</strong></p>
+                <p>We are a Romanian software company specialised in Web development. Most of our work is open source and that’s the way we like it.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="sponsor_logo_td">
+                <!-- We use JavaScript to load images after all the text has been loaded/displayed, hence the use of src="" below -->
+                <a href="http://myadobe.ro/" target="_blank"><img id="adobe_logo" style="max-width: 220px;" src=""></a>
+              </td>
+              <td class="sponsor_copy_td">
+                <p><strong>Sponsor: Adobe România</strong></p>
+                <p>Suntem un R&amp;D center, o filială a companiei Adobe, care deține multe tehnologii și unelte de dezvoltare web - Flash, Flex, AIR, Dreamweaver. Noi lucrăm la aceste tehnologii web, le dezvoltăm, le extindem și le ducem mai departe. Adobe România înseamnă aproape 200 de oameni talentați care colaborează strâns cu echipele Adobe din întreaga lume.</p>
+              </td>
+            </tr>
+          </table>
+        </div> <!-- id="sponsori_content" -->
+
+        <div id="cumseajunge_content" class="visualstate">
+          <h3>Cum se ajunge la sălile de curs WebDev</h3>
+          <!-- We use JavaScript to load images after all the text has been loaded/displayed, hence the use of src="" below -->
+          <br>
+          <strong>Instrucțiunile de mai jos au ca obiectiv să-i arate pas cu pas unei persoane nefamiliarizate cu Facultatea de Automatică și Calculatoare, cum se ajunge la sălile de curs EG306 (Intel) și EG106 (Ixia).</strong>
+          <br>
+          <br>
+          <strong>Venind dinspre bulevardul Iuliu Maniu, intrarea în facultate se vede așa:</strong>
+          <br>
+          <br>
+          <img id="acs_upb_01" src="">
+          <br>
+          <br>
+          <strong>Odată ajuns în gang, trebuie să intri pe ușa din stânga. Odată ce ai intrat, holul se vede așa:</strong>
+          <br>
+          <br>
+          <img id="acs_upb_02" src="">
+          <br>
+          <br>
+          <strong>Imediat după trepte, o iei la dreapta. Vei vedea în spate un glasvand.</strong>
+          <br>
+          <br>
+          <img id="acs_upb_03" src="">
+          <br>
+          <br>
+          <strong>Odată ajuns dincolo de glasvand, mergând în aceeași direcție, în spate-dreapta sunt câteva trepte pe care trebuie să le cobori.</strong>
+          <br>
+          <br>
+          <img id="acs_upb_04" src="">
+          <br>
+          <br>
+          <strong>Aici începe un hol foarte lung (holul EG), care este punctul de intrare spre ambele săli.</strong>
+          <br>
+          <br>
+          <img id="acs_upb_05" src="">
+          <br>
+          <br>
+          <strong>Mergând pe holul EG, urmărește cu atenție pe partea dreaptă numerele sălilor de curs.</strong>
+          <br>
+          <br>
+          <strong>Imediat după sala de curs EG205 se află casa scărilor care duce spre EG306 (sala Intel).</strong>
+          <br>
+          <br>
+          <img id="acs_upb_06" src="">
+          <br>
+          <br>
+          <img id="acs_upb_07" src="">
+          <br>
+          <br>
+          <strong>Ca punct de reper, vei vedea la mezanin o sală de curs pe al cărei afiș este scris cu litere mari acronimul "ac84" (printre alte lucruri).</strong>
+          <br>
+          <br>
+          <strong>Urci un etaj și ai ajuns la destinație. Așa se vede sala Intel de pe scări:</strong>
+          <br>
+          <br>
+          <img id="acs_upb_08" src="">
+          <br>
+          <br>
+          <strong>Am găsit sala Intel, dar la sala Ixia cum se ajunge?</strong>
+          <br>
+          <br>
+          <strong>Mergând mai departe pe holul EG în aceeași direcție ca mai înainte, imediat după sala de curs EG209 se află casa scărilor care duce spre EG106 (sala Ixia).</strong>
+          <br>
+          <br>
+          <img id="acs_upb_09" src="">
+          <br>
+          <br>
+          <img id="acs_upb_10" src="">
+          <br>
+          <br>
+          <strong>Cobori un etaj și ai ajuns la destinație. Așa se vede sala Ixia de pe scări:</strong>
+          <br>
+          <br>
+          <img id="acs_upb_11" src="">
+        </div> <!-- id="cumseajunge_content" -->
+
+        <h3>&nbsp;</h3>
+
+        <p class="extra_buttons" id="tap_target_acasa">
+          <button class="btn greybutton webdevmenuitem" data-id="#acasa">
+            <strong>Acasă</strong>
+          </button>
+        </p>
+        <p class="extra_buttons">
+          <button class="btn greybutton webdevmenuitem" data-id="#frontend">
+            <strong>Frontend Track</strong>
+          </button>
+        </p>
+        <p class="extra_buttons">
+          <button class="btn greybutton webdevmenuitem" data-id="#backend">
+            <strong>Backend Track</strong>
+          </button>
+        </p>
+        <p class="extra_buttons">
+          <button class="btn greybutton webdevmenuitem" data-id="#cursanti">
+            <strong>Cursanți</strong>
+          </button>
+        </p>
+        <p class="extra_buttons">
+          <button class="btn greybutton webdevmenuitem" data-id="#meta">
+            <strong>Meta</strong>
+          </button>
+        </p>
+        <p class="extra_buttons">
+          <button class="btn greybutton webdevmenuitem" data-id="#sponsori">
+            <strong>Sponsori</strong>
+          </button>
+        </p>
+      </div> <!-- class="main span8 offset1" -->
+    </div> <!-- class="row-fluid" -->
+  </div> <!-- class="wrapper" -->
+
+  <div class="footer-wrapper">
+    <div class="footer">&copy; 2013 ROSEdu</div>
+  </div>
+
+  <div style="display: none;">
+    <img id="arrow_hover" src="">
+    <img id="grey_gradient" src="">
+  </div>
+</div> <!-- class="flexboxlayout fullheight" -->
+</body>
+</html>
+<script src="js/zepto.min.js"></script>
+<script src="js/main.js"></script>
+
