@@ -5,5 +5,4 @@ set softtabstop=2
 set smarttab
 set expandtab
 set cursorline
-
-
+set encoding=utf8
